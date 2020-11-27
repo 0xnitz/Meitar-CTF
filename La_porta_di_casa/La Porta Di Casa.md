@@ -48,7 +48,9 @@ Go to **Analyze** > **Enabled protocols**. And disable everything, then enable I
 
 
 
-Now we have list of packets that's using UDP, all have the same data 'X', and the only thing that's differ is the destination port.
+Now we have list of packets that's using UDP, all have the same data 'X', and the only thing that's differ is the **destination port**.
+
+![4](imgs/4.png)
 
 We assume that each port number is the ASCII value of the flag and we get:
 
