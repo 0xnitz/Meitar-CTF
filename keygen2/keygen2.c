@@ -5,6 +5,10 @@
 
 #define FLAG_LEN (20)
 
+#define VALIDATE_COND(x)    \
+        if (!(x))           \
+            access_denied() \
+
 void access_denied();
 uint8_t ror(int8_t num, int8_t x);
 
@@ -21,57 +25,20 @@ void main(int argc, char **argv)
 
     char *flag = argv[1];
 
-    if (strncmp(flag, "MEITAR{", 7) != 0) {
-        access_denied();
-    }
-    
-    if ((flag[7] ^ 5) != 'g') {
-        access_denied();
-    }
+    VALIDATE_COND(strncmp(flag, "MEITAR{", 7) == 0 && flag[19] == '}');
 
-    if ((flag[8] | 3) != '3') {
-        access_denied();
-    }
-
-    if ((flag[9] & 13) != 12) {
-        access_denied();
-    }
-
-    if (~flag[10] != -53) {
-        access_denied();
-    }
-
-    if ((flag[11] * 3) != 342) {
-        access_denied();
-    }
-
-    if ((flag[12] + 35) != 0x9c) {
-        access_denied();
-    }
-
-    if ((flag[13] - 2) != 0135) {
-        access_denied();
-    }
-
-    if ((flag[14] + 3 - 15) != 0b100101) {
-        access_denied();
-    }
-
-    if ((flag[15] << 3) != 920) {
-        access_denied();
-    }
-
-    if (ror(flag[16], 3) != 235) {
-        access_denied();
-    }
-
-    if (~(ror(flag[17], 5) ^ 3 & 5) != -43) {
-        access_denied();
-    }
-
-    if ((uint8_t)(~(ror(flag[18], 5) ^ 3 & 5)) != 45) {
-        access_denied();
-    }
+    VALIDATE_COND((flag[7] ^ 5) == 'g');
+    VALIDATE_COND((flag[8] + 3 ^ 3) == '7');
+    VALIDATE_COND((flag[9] ^ 20) == 'z');
+    VALIDATE_COND(~flag[10] == -53);
+    VALIDATE_COND((flag[11] * 3) == 342);
+    VALIDATE_COND((flag[12] + 35) == 0x9c);
+    VALIDATE_COND((flag[13] - 2) == 0135);
+    VALIDATE_COND((flag[14] + 3 - 15) == 0b100101);
+    VALIDATE_COND((flag[15] << 3) == 920);
+    VALIDATE_COND(ror(flag[16], 3) == 235);
+    VALIDATE_COND(~(ror(flag[17], 5) ^ 3 & 5) == -43);
+    VALIDATE_COND((uint8_t)(~(ror(flag[18], 5) ^ 3 & 5)) == 45);
 
     printf("Access Granted!\n");
     exit(0);
