@@ -10,7 +10,7 @@ void main()
 
     gets(buf);
 
-    if (winner != 0) {  
+    if (winner == 0xdeadbeef) {  
         system("cat flag.txt");
     }
 }
