@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: white;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  background-color: rgb(40, 42, 45);
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+header * {
+  display: inline;
+}
+
+header img {
+  position: relative;
+  top: -2px;
+  padding: 0 2rem;
+  height: 3rem;
+}
+
+header h1 {
+  margin: 0;
+  text-align: left;
+}
+
+header h1 a {
+  color: white;
+  text-decoration: none;
+}
+
+header h1 a:hover {
+  color: rgb(170, 170, 170);
+}
+
+pre {
+  margin: 0 auto;
+  padding-left: 2rem;
+  width: 75%;
+  text-align: left;
+  font-size: 1.5rem;
+  border-left: 3px solid rgba(0, 0, 0, 0.2);
+  white-space: pre-wrap;
+  word-wrap: break;
+}
+
+.content {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.content ul {
+  width: 50%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.content ul li {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  margin: 2rem 0;
+  background: rgb(240, 240, 240);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .4);
+  list-style: none;
+  cursor: pointer;
+  transition: padding 0.1s ease-out;
+}
+
+.content ul li:hover {
+  padding-left: 3rem;
+}
+
+.content ul li.forbidden:hover {
+  background: rgba(250, 150, 150);
+  cursor: not-allowed;
+}
+
+.content ul li img {
+  display: inline;
+  margin: 0 2rem;
+  width: 2rem;
+  height: 2rem;
+  background-image: url('/file-icon.png');
+}
+
+.content ul li span {
+  color: rgb(80, 80, 80);
+  font-weight: bold;
+  font-size: 1.5rem;
+}
