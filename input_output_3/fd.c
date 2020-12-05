@@ -134,7 +134,7 @@ int main(int argc, char **argv)
 
     check_buffer_valid(f1.buf);
 
-    if(f1.fd >= 0 && f1.fd <= 3){
+    if(f1.fd >= 0 && f1.fd <= 2){
         escape();
     }
 
