@@ -3,7 +3,7 @@
 <html>
   <head>
     <title>My Super Awesome File Manager!</title>
-    <link type="text/css" rel="stylesheet" href="style.css" />
+    <link type="text/css" rel="stylesheet" href="../style.css" />
   </head>
   <body>
     <header>
